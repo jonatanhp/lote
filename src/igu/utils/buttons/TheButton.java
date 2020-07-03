@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package igu.util.buttons;
+package igu.utils.buttons;
 
 import java.awt.Color;
 import java.awt.Cursor;

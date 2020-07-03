@@ -8,6 +8,7 @@ package igu.compras;
 import igu.ChangePanel;
 import igu.compras.clientes.ClientesPanel;
 import igu.compras.panels.ComprasPanel;
+import igu.compras.productos.ProductosPanel;
 import java.awt.Color;
 
 /**
@@ -35,8 +36,9 @@ public class ComprasMainPanel extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        clientesButton = new igu.util.buttons.TheButton();
-        comprasButton = new igu.util.buttons.TheButton();
+        clientesButton = new igu.utils.buttons.TheButton();
+        comprasButton = new igu.utils.buttons.TheButton();
+        productosButton = new igu.utils.buttons.TheButton();
         workPanel = new javax.swing.JPanel();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -85,6 +87,28 @@ public class ComprasMainPanel extends javax.swing.JPanel {
             }
         });
 
+        productosButton.setBackground(new java.awt.Color(239, 238, 244));
+        productosButton.setForeground(new java.awt.Color(128, 128, 131));
+        productosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/igu/imgs/icons/user_blue_32.png"))); // NOI18N
+        productosButton.setText("CLIENTES");
+        productosButton.setColorHover(new java.awt.Color(204, 204, 204));
+        productosButton.setColorNormal(new java.awt.Color(239, 238, 244));
+        productosButton.setColorPressed(new java.awt.Color(204, 204, 204));
+        productosButton.setColorTextHover(new java.awt.Color(128, 128, 131));
+        productosButton.setColorTextNormal(new java.awt.Color(128, 128, 131));
+        productosButton.setColorTextPressed(new java.awt.Color(128, 128, 131));
+        productosButton.setFocusable(false);
+        productosButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                productosButtonMousePressed(evt);
+            }
+        });
+        productosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                productosButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -94,7 +118,9 @@ public class ComprasMainPanel extends javax.swing.JPanel {
                 .addComponent(comprasButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(clientesButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(550, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(productosButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(374, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,7 +128,8 @@ public class ComprasMainPanel extends javax.swing.JPanel {
                 .addGap(11, 11, 11)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(clientesButton, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                    .addComponent(comprasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comprasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(productosButton, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
                 .addGap(12, 12, 12))
         );
 
@@ -182,12 +209,36 @@ public class ComprasMainPanel extends javax.swing.JPanel {
         this.clientesButton.setSelected(false);
     }//GEN-LAST:event_comprasButtonMousePressed
 
+    private void productosButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productosButtonMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_productosButtonMousePressed
+
+    private void productosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productosButtonActionPerformed
+        // TODO add your handling code here:
+        new ChangePanel(workPanel, new ProductosPanel());
+        /*  if (new Validate().comprobar()) {
+
+        } else {
+            new ChangePanel(pnlPrincipal, new PinPanel());
+        }*/
+
+        if (this.clientesButton.isSelected()) {
+            this.clientesButton.setColorNormal(new Color(204, 204, 204));
+
+            this.comprasButton.setColorNormal(new Color(239, 238, 244));
+
+        } else {
+            this.clientesButton.setColorNormal(new Color(239, 238, 244));
+        }
+    }//GEN-LAST:event_productosButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private igu.util.buttons.TheButton clientesButton;
-    private igu.util.buttons.TheButton comprasButton;
+    private igu.utils.buttons.TheButton clientesButton;
+    private igu.utils.buttons.TheButton comprasButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private igu.utils.buttons.TheButton productosButton;
     public static javax.swing.JPanel workPanel;
     // End of variables declaration//GEN-END:variables
 }
