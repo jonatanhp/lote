@@ -122,7 +122,7 @@ public class ClientesPanel extends javax.swing.JPanel {
             }
         });
 
-        guardarButton.setText("GUARDAR");
+        guardarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/igu/imgs/icons/eliminar.png"))); // NOI18N
         guardarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 guardarButtonActionPerformed(evt);

@@ -6,6 +6,7 @@
 package igu;
 
 import igu.compras.ComprasMainPanel;
+import igu.ventas.lote.VentasMainPanel;
 
 /**
  *
@@ -32,7 +33,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         menubar = new javax.swing.JPanel();
-        theButton3 = new igu.utils.buttons.TheButton();
+        ventasButton = new igu.utils.buttons.TheButton();
         theButton2 = new igu.utils.buttons.TheButton();
         dp = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -40,17 +41,22 @@ public class MainFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        theButton3.setBackground(new java.awt.Color(239, 238, 244));
-        theButton3.setForeground(new java.awt.Color(128, 128, 131));
-        theButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/igu/imgs/icons/collection.png"))); // NOI18N
-        theButton3.setText("VENTAS");
-        theButton3.setColorHover(new java.awt.Color(204, 204, 204));
-        theButton3.setColorNormal(new java.awt.Color(239, 238, 244));
-        theButton3.setColorPressed(new java.awt.Color(204, 204, 204));
-        theButton3.setColorTextHover(new java.awt.Color(128, 128, 131));
-        theButton3.setColorTextNormal(new java.awt.Color(128, 128, 131));
-        theButton3.setColorTextPressed(new java.awt.Color(128, 128, 131));
-        theButton3.setFocusable(false);
+        ventasButton.setBackground(new java.awt.Color(239, 238, 244));
+        ventasButton.setForeground(new java.awt.Color(128, 128, 131));
+        ventasButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/igu/imgs/icons/collection.png"))); // NOI18N
+        ventasButton.setText("VENTAS");
+        ventasButton.setColorHover(new java.awt.Color(204, 204, 204));
+        ventasButton.setColorNormal(new java.awt.Color(239, 238, 244));
+        ventasButton.setColorPressed(new java.awt.Color(204, 204, 204));
+        ventasButton.setColorTextHover(new java.awt.Color(128, 128, 131));
+        ventasButton.setColorTextNormal(new java.awt.Color(128, 128, 131));
+        ventasButton.setColorTextPressed(new java.awt.Color(128, 128, 131));
+        ventasButton.setFocusable(false);
+        ventasButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ventasButtonActionPerformed(evt);
+            }
+        });
 
         theButton2.setBackground(new java.awt.Color(204, 204, 204));
         theButton2.setForeground(new java.awt.Color(128, 128, 131));
@@ -77,13 +83,13 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(theButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(theButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ventasButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         menubarLayout.setVerticalGroup(
             menubarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menubarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(theButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addComponent(ventasButton, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
                 .addComponent(theButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -138,6 +144,11 @@ public class MainFrame extends javax.swing.JFrame {
         new ChangePanel(mainPanel, new ComprasMainPanel());
     }//GEN-LAST:event_theButton2ActionPerformed
 
+    private void ventasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventasButtonActionPerformed
+        // TODO add your handling code here:
+         new ChangePanel(mainPanel, new VentasMainPanel());
+    }//GEN-LAST:event_ventasButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -180,6 +191,6 @@ public class MainFrame extends javax.swing.JFrame {
     public static javax.swing.JPanel mainPanel;
     private javax.swing.JPanel menubar;
     private igu.utils.buttons.TheButton theButton2;
-    private igu.utils.buttons.TheButton theButton3;
+    private igu.utils.buttons.TheButton ventasButton;
     // End of variables declaration//GEN-END:variables
 }

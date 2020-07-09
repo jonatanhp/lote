@@ -90,7 +90,7 @@ public class ComprasMainPanel extends javax.swing.JPanel {
         productosButton.setBackground(new java.awt.Color(239, 238, 244));
         productosButton.setForeground(new java.awt.Color(128, 128, 131));
         productosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/igu/imgs/icons/user_blue_32.png"))); // NOI18N
-        productosButton.setText("CLIENTES");
+        productosButton.setText("PRODUCTOS");
         productosButton.setColorHover(new java.awt.Color(204, 204, 204));
         productosButton.setColorNormal(new java.awt.Color(239, 238, 244));
         productosButton.setColorPressed(new java.awt.Color(204, 204, 204));
@@ -171,6 +171,7 @@ public class ComprasMainPanel extends javax.swing.JPanel {
             this.comprasButton.setColorNormal(new Color(204, 204, 204));
 
             this.clientesButton.setColorNormal(new Color(239, 238, 244));
+            this.productosButton.setColorNormal(new Color(239, 238, 244));
 
         } else {
             this.comprasButton.setColorNormal(new Color(239, 238, 244));
@@ -190,6 +191,7 @@ public class ComprasMainPanel extends javax.swing.JPanel {
             this.clientesButton.setColorNormal(new Color(204, 204, 204));
 
             this.comprasButton.setColorNormal(new Color(239, 238, 244));
+            this.productosButton.setColorNormal(new Color(239, 238, 244));
 
         } else {
             this.clientesButton.setColorNormal(new Color(239, 238, 244));
@@ -201,16 +203,23 @@ public class ComprasMainPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
          this.clientesButton.setSelected(true);
         this.comprasButton.setSelected(false);
+        this.productosButton.setSelected(false);
     }//GEN-LAST:event_clientesButtonMousePressed
 
     private void comprasButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comprasButtonMousePressed
         // TODO add your handling code here:
          this.comprasButton.setSelected(true);
         this.clientesButton.setSelected(false);
+        this.productosButton.setSelected(false);
     }//GEN-LAST:event_comprasButtonMousePressed
 
     private void productosButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productosButtonMousePressed
         // TODO add your handling code here:
+        
+         this.clientesButton.setSelected(false);
+        this.comprasButton.setSelected(false);
+         this.productosButton.setSelected(true);
+       
     }//GEN-LAST:event_productosButtonMousePressed
 
     private void productosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productosButtonActionPerformed
@@ -222,13 +231,14 @@ public class ComprasMainPanel extends javax.swing.JPanel {
             new ChangePanel(pnlPrincipal, new PinPanel());
         }*/
 
-        if (this.clientesButton.isSelected()) {
-            this.clientesButton.setColorNormal(new Color(204, 204, 204));
+        if (this.productosButton.isSelected()) {
+            
+            this.clientesButton.setColorNormal(new Color(239, 238, 244));
 
             this.comprasButton.setColorNormal(new Color(239, 238, 244));
-
+            this.productosButton.setColorNormal(new Color(204, 204, 204));
         } else {
-            this.clientesButton.setColorNormal(new Color(239, 238, 244));
+            this.productosButton.setColorNormal(new Color(239, 238, 244));
         }
     }//GEN-LAST:event_productosButtonActionPerformed
 

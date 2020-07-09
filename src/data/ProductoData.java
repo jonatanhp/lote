@@ -116,7 +116,7 @@ public class ProductoData {
             sql = "SELECT * FROM producto ORDER BY id";
         } else {
             sql = "SELECT * FROM producto WHERE (id LIKE'" + filter + "%' OR "
-                    + "nombres LIKE'" + filter +"%'OR cod LIKE'"+filter+"%'OR precio LIKE'"+filter+"%'OR cantidad LIKE'"+filter+ "%' OR infoadic LIKE'" + filter + "%' OR "
+                    + "nombres LIKE'" + filter +"%'OR cod LIKE'"+filter+"%'OR precio LIKE'"+filter+"%'OR cantidad LIKE'"+filter+ "%' OR info_adic LIKE'" + filter + "%' OR "
                     + "id LIKE'" + filter + "%') "
                     + "ORDER BY nombres";
         }
