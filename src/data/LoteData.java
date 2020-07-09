@@ -36,13 +36,14 @@ public class LoteData {
                 + "VALUES(?,?,?,?,?)";
         int i = 0;
         try {
+            String fecha = sdf.format(d.getFecha_venta());
             ps = cn.prepareStatement(sql, returns);
             ps.setString(++i, d.getNumero());
             ps.setString(++i, d.getDireccion());
             ps.setDouble(++i, d.getValor_venta());
+            ps.setString(++i, fecha);
             
-            ps.setString(++i, sdf.format(d.getFecha_venta()));
-            ps.setString(++i, sdf.format(d.getDate_created()));
+            ps.setString(++i, sdf.format(dt));
             rsId = ps.executeUpdate();// 0 no o 1 si commit
             try (ResultSet rs = ps.getGeneratedKeys()) {
                 if (rs.next()) {
@@ -71,12 +72,13 @@ public class LoteData {
                 + "WHERE id=?";
         int i = 0;
         try {
+            String fecha = sdf.format(dt);
             ps = cn.prepareStatement(sql);
             ps.setString(++i, d.getNumero());
             ps.setString(++i, d.getDireccion());
             ps.setDouble(++i, d.getValor_venta());
             
-            ps.setString(++i, sdf.format(dt));
+            ps.setString(++i, fecha);
             ps.setString(++i, sdf.format(dt));
             ps.setInt(++i, d.getId());
             comit = ps.executeUpdate();
@@ -135,8 +137,8 @@ public class LoteData {
                     Date date = sdf.parse(fecha);
                     System.out.println("Xlist.date:" + date);
                    
-
-                    d.setDate_created(sdf.parse(rs.getString("fecha_venta")));
+                    d.setFecha_venta(date);
+                    d.setDate_created(sdf.parse(rs.getString("date_created")));
                    // System.out.println("list.date_created:" + rs.getString("date_created"));
                    // System.out.println("list.last_updated:" + rs.getString("last_updated"));
                    

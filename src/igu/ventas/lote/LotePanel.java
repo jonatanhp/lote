@@ -507,12 +507,13 @@ public class LotePanel extends javax.swing.JPanel {
         if (this.productNameField.getText().equals("")) {
             System.err.println("Nombre es requerido");
         } else {
+            
             Lote s = new Lote();
             s.setNumero(productNameField.getText());
             s.setDireccion(productCodeField.getText());
             s.setValor_venta(Double.parseDouble(priceProductField.getText()));
             s.setFecha_venta(dateSaleLoteChooser.getDate());
-            s.setDate_created(dateSaleLoteChooser.getDate());
+            //String currentTime = sdf.format(dt);
             if (table.getSelectedRow() != -1) {// ha seleccionado, update
                 try {
                     Lote fila = (Lote) LoteTableModel.getRow(table.getSelectedRow());
